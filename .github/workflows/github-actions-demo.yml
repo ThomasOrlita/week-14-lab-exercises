@@ -1,0 +1,19 @@
+name: CI Push
+run-name: CI workflow
+on: [push]
+jobs:
+ Explore-GitHub-Actions:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Check out repository code
+       uses: actions/checkout@v3
+
+     - name: checks vunerbilites
+       run: cd insecure && npm i && npm audit
+
+     - name: checks lint
+       run: cd mashup && npm i && npm i lint && npm run lint
+
+     - name: runs the js test
+       run: cd unittesting && npm i && npm run test
+name: CI Push
