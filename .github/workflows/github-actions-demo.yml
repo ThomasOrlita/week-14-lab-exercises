@@ -16,4 +16,3 @@ jobs:
 
      - name: runs the js test
        run: cd unittesting && npm i && npm run test
-name: CI Push
